@@ -1,4 +1,4 @@
-# Generates a list of fake names, phone numbers and addresses.
+# Generates a list of fake first and last names.
 
 require 'Faker'
 
@@ -12,8 +12,6 @@ Faker::Config.locale = 'en-US'
 
 for i in 1..count do
   name = Faker::Name.first_name + " " + Faker::Name.last_name
-  phone = Faker::PhoneNumber.cell_phone
-  address = Faker::Address.street_address + ", " + Faker::Address.city + ", " + Faker::Address.state_abbr + " " + Faker::Address.zip
-  printf "%-25s %-15s %s\n", name, phone, address
+  puts name
 end
 
